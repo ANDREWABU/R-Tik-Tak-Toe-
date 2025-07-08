@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #bc1919;
+  --text-color: #b90b0b;
+  --square-bg: #c31414;
+  --square-border: #bd2e2e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.square {
+  background: var(--square-bg);
+  border: 1px solid var(--square-border);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  height: 60px;
+  width: 60px;
+  margin: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.status {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.game-info {
+  width: 100%;
+  text-align: center;
+}
+
+.game-info ol {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.game-info button {
+  background: var(--square-bg);
+  color: var(--text-color);
+  border: 1px solid var(--square-border);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tic-tac-toe {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
